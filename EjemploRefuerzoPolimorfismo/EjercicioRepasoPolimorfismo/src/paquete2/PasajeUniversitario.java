@@ -9,17 +9,24 @@ package paquete2;
  * @author reroes
  */
 public class PasajeUniversitario extends PasajeUrbano {
-    
-    public PasajeUniversitario(double pasaje){
+
+    private double pasajeFijo;
+
+    public PasajeUniversitario(double pasaje) {
         super(pasaje);
+        pasajeFijo = pasaje;
     }
-    
-       
+
     @Override
-    public String toString(){
+    public String toString() {
         return String.format("Tipo de pasaje: Universitario\n"
                 + "%s",
-                super.toString()
-                );
+                super.toString());
     }
+
+    @Override
+    public void establecerValorPasaje() {
+       valorPasaje = pasajeFijo - (pasajeFijo * 0.30);
+    }
+
 }
